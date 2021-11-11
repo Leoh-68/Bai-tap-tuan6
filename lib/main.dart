@@ -1,0 +1,170 @@
+import 'package:flutter/material.dart';
+
+void main() {
+  runApp(const Zola());
+}
+
+class Zola extends StatelessWidget {
+  const Zola({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      initialRoute: "/",
+      routes: {
+        "/": (context) => const LoginPage(),
+        "/main": (context) => const SocialMediaApp()
+      },
+    );
+  }
+}
+
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+  @override
+  LoginPageState createState() => LoginPageState();
+}
+
+class LoginPageState extends State<LoginPage> {
+  late TextEditingController _username;
+  late TextEditingController _pass;
+  @override
+  void initState() {
+    super.initState();
+    _username = TextEditingController();
+    _pass = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    _username.dispose();
+    _pass.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        backgroundColor: const Color.fromRGBO(0, 141, 251, 0.41),
+        body: Stack(
+          children: <Widget>[
+            Center(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.fromLTRB(20, 250, 20, 50),
+                    child: Column(
+                      children: [
+                        TextField(
+                            controller: _username,
+                            decoration: const InputDecoration(
+                                filled: true,
+                                fillColor: Colors.white,
+                                border: OutlineInputBorder(),
+                                labelText: 'Tên đăng nhập',
+                                labelStyle: TextStyle(color: Colors.black))),
+                        const Padding(padding: EdgeInsets.only(bottom: 10)),
+                        TextField(
+                          controller: _pass,
+                          decoration: const InputDecoration(
+                              filled: true,
+                              fillColor: Colors.white,
+                              border: OutlineInputBorder(),
+                              labelText: 'Mật khẩu',
+                              labelStyle: TextStyle(color: Colors.black)),
+                        ),
+                      ],
+                    ),
+                  ),
+                  const Padding(padding: EdgeInsets.only(top: 10)),
+                  Row(
+                    children: [
+                      Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: SizedBox(
+                            height: 50,
+                            child: TextButton(
+                              onPressed: () {
+                                setState(() {});
+                                if (_username.text == "a" ||
+                                    _pass.text == "a") {
+                                  Navigator.pushNamed(context, '/main');
+                                }
+                              },
+                              style: ButtonStyle(
+                                  backgroundColor:
+                                      MaterialStateProperty.resolveWith(
+                                          (states) => Colors.black)),
+                              child: const Text(
+                                "Sign in",
+                                style: TextStyle(
+                                    color: Colors.white, fontSize: 20),
+                              ),
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  )
+                ],
+              ),
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class SocialMediaApp extends StatelessWidget {
+  const SocialMediaApp({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: DefaultTabController(
+        length: 5,
+        child: Scaffold(
+          appBar: AppBar(
+            bottom: const TabBar(
+              tabs: [
+                Tab(icon: Icon(Icons.home)),
+                Tab(icon: Icon(Icons.supervisor_account_outlined)),
+                Tab(icon: Icon(Icons.tv)),
+                Tab(icon: Icon(Icons.notifications_none_rounded)),
+                Tab(icon: Icon(Icons.menu))
+              ],
+            ),
+            title: const Text('FakeBook'),
+          ),
+          body: const TabBarView(
+            children: [
+              HomePage(),
+              Icon(Icons.directions_transit),
+              Icon(Icons.directions_bike),
+              Icon(Icons.notifications_none_rounded),
+              Icon(Icons.menu)
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class HomePage extends StatelessWidget {
+  const HomePage({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: Scaffold(
+        body: Column(
+          children: const [Text("A")],
+        ),
+      ),
+    );
+  }
+}
