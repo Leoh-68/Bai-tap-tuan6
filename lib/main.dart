@@ -1,4 +1,9 @@
+import 'package:bai_tap_tuan_6/menu.dart';
+import 'package:bai_tap_tuan_6/notification.dart';
+import 'package:bai_tap_tuan_6/watch.dart';
 import 'package:flutter/material.dart';
+import 'friendsrequest.dart';
+import 'newspage.dart';
 
 void main() {
   runApp(const Zola());
@@ -140,29 +145,8 @@ class SocialMediaApp extends StatelessWidget {
             title: const Text('FakeBook'),
           ),
           body: const TabBarView(
-            children: [
-              HomePage(),
-              Icon(Icons.directions_transit),
-              Icon(Icons.directions_bike),
-              Icon(Icons.notifications_none_rounded),
-              Icon(Icons.menu)
-            ],
+            children: [NewsPage(), FriendsRq(), Watch(), ThongBao(), Menu()],
           ),
-        ),
-      ),
-    );
-  }
-}
-
-class HomePage extends StatelessWidget {
-  const HomePage({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Column(
-          children: const [Text("A")],
         ),
       ),
     );
