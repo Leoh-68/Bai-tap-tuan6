@@ -152,3 +152,4 @@ class SocialMediaApp extends StatelessWidget {
     );
   }
 }
+  
