@@ -1,5 +1,8 @@
+import 'package:bai_tap_tuan_6/error.dart';
+import 'package:bai_tap_tuan_6/loading.dart';
 import 'package:bai_tap_tuan_6/menu.dart';
 import 'package:bai_tap_tuan_6/notification.dart';
+import 'package:bai_tap_tuan_6/profile.dart';
 import 'package:bai_tap_tuan_6/watch.dart';
 import 'package:flutter/material.dart';
 import 'friendsrequest.dart';
@@ -18,7 +21,9 @@ class Zola extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => const LoginPage(),
-        "/main": (context) => const SocialMediaApp()
+        "/profile": (context) => const Profile(),
+        "/main": (context) => const SocialMediaApp(),
+        "/menu": (context) => const Menu()
       },
     );
   }
@@ -93,9 +98,53 @@ class LoginPageState extends State<LoginPage> {
                             child: TextButton(
                               onPressed: () {
                                 setState(() {});
-                                if (_username.text == "a" ||
+                                if (_username.text == "a" &&
                                     _pass.text == "a") {
-                                  Navigator.pushNamed(context, '/main');
+                                  Navigator.push(
+                                    context,
+                                    PageRouteBuilder(
+                                      pageBuilder: (BuildContext context,
+                                          Animation animation,
+                                          Animation secondaryAnimation) {
+                                        return const LoadingScreen();
+                                      },
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secondaryAnimation,
+                                          Widget child) {
+                                        return SlideTransition(
+                                          position: Tween<Offset>(
+                                            begin: const Offset(1.0, 0.0),
+                                            end: Offset.zero,
+                                          ).animate(animation),
+                                          child: child,
+                                        );
+                                      },
+                                    ),
+                                  );
+                                } else {
+                                  Navigator.push(
+                                    context,
+                                    PageRouteBuilder(
+                                      pageBuilder: (BuildContext context,
+                                          Animation animation,
+                                          Animation secondaryAnimation) {
+                                        return const ErrorPage();
+                                      },
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secondaryAnimation,
+                                          Widget child) {
+                                        return SlideTransition(
+                                          position: Tween<Offset>(
+                                            begin: const Offset(1.0, 0.0),
+                                            end: Offset.zero,
+                                          ).animate(animation),
+                                          child: child,
+                                        );
+                                      },
+                                    ),
+                                  );
                                 }
                               },
                               style: ButtonStyle(
@@ -152,4 +201,3 @@ class SocialMediaApp extends StatelessWidget {
     );
   }
 }
-  
