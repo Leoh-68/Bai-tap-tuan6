@@ -103,7 +103,7 @@ class _BuildList extends State<BuildList> {
                     children: [
                       IconButton(
                           onPressed: () => setState(() => Textt++),
-                          icon: Icon(Icons.comment)),
+                          icon: Icon(Icons.beach_access)),
                       Text("Like")
                     ],
                   ),
@@ -121,7 +121,7 @@ class _BuildList extends State<BuildList> {
                     child: Container(
                   child: Row(
                     children: [
-                      IconButton(onPressed: () {}, icon: Icon(Icons.comment)),
+                      IconButton(onPressed: () {}, icon: Icon(Icons.share)),
                       Text("Share")
                     ],
                   ),
@@ -170,7 +170,7 @@ class _BuildList extends State<BuildList> {
                         children: [
                           BuildImg('images/1.jpg'),
                           Text(
-                            "Ayaya Gaming",
+                            "Aether Gaming",
                             overflow: TextOverflow.fade,
                             maxLines: 1,
                           )
@@ -187,7 +187,7 @@ class _BuildList extends State<BuildList> {
                         children: [
                           BuildImg('images/4.jpg'),
                           Text(
-                            "Ayaya Gaming",
+                            "Lumine Gaming",
                             overflow: TextOverflow.clip,
                             maxLines: 1,
                           )
@@ -204,7 +204,7 @@ class _BuildList extends State<BuildList> {
                         children: [
                           BuildImg('images/1.jpg'),
                           Text(
-                            "Ayaya Gaming",
+                            "Raiden Gaming",
                             overflow: TextOverflow.clip,
                             maxLines: 1,
                           )
@@ -238,7 +238,75 @@ class _BuildList extends State<BuildList> {
                         children: [
                           BuildImg('images/6.jpg'),
                           Text(
-                            "Ayaya Gaming",
+                            "Zhonglee Gaming",
+                            overflow: TextOverflow.clip,
+                            maxLines: 1,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 60,
+                    height: 100,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      child: Column(
+                        children: [
+                          BuildImg('images/5.jpg'),
+                          Text(
+                            "Childe Gaming",
+                            overflow: TextOverflow.clip,
+                            maxLines: 1,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 60,
+                    height: 100,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      child: Column(
+                        children: [
+                          BuildImg('images/3.jpg'),
+                          Text(
+                            "Kazuhu Gaming",
+                            overflow: TextOverflow.clip,
+                            maxLines: 1,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 60,
+                    height: 100,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      child: Column(
+                        children: [
+                          BuildImg('images/1.jpg'),
+                          Text(
+                            "Yoimiya Gaming",
+                            overflow: TextOverflow.clip,
+                            maxLines: 1,
+                          )
+                        ],
+                      ),
+                    ),
+                  ),
+                  Container(
+                    width: 60,
+                    height: 100,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 10, right: 10),
+                      child: Column(
+                        children: [
+                          BuildImg('images/2.jpg'),
+                          Text(
+                            "Yoimiya Gaming",
                             overflow: TextOverflow.clip,
                             maxLines: 1,
                           )
