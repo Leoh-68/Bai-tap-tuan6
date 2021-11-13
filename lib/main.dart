@@ -1,3 +1,4 @@
+import 'package:bai_tap_tuan_6/error.dart';
 import 'package:bai_tap_tuan_6/loading.dart';
 import 'package:bai_tap_tuan_6/menu.dart';
 import 'package:bai_tap_tuan_6/notification.dart';
@@ -121,8 +122,29 @@ class LoginPageState extends State<LoginPage> {
                                       },
                                     ),
                                   );
-                                  _username.clear();
-                                  _pass.clear();
+                                } else {
+                                  Navigator.push(
+                                    context,
+                                    PageRouteBuilder(
+                                      pageBuilder: (BuildContext context,
+                                          Animation animation,
+                                          Animation secondaryAnimation) {
+                                        return const ErrorPage();
+                                      },
+                                      transitionsBuilder: (BuildContext context,
+                                          Animation<double> animation,
+                                          Animation<double> secondaryAnimation,
+                                          Widget child) {
+                                        return SlideTransition(
+                                          position: Tween<Offset>(
+                                            begin: const Offset(1.0, 0.0),
+                                            end: Offset.zero,
+                                          ).animate(animation),
+                                          child: child,
+                                        );
+                                      },
+                                    ),
+                                  );
                                 }
                               },
                               style: ButtonStyle(
