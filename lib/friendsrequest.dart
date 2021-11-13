@@ -222,7 +222,6 @@ class FriendsRq extends StatelessWidget {
             SizedBox(
               height: 20.0,
             ),
-            
               account(avatarUrl[0], 'Chủ Tịch Aruto', avatarUrl[1]),
               account(avatarUrl[1], 'Hổ Bi Cuồng Ark', avatarUrl[0]),
               account(avatarUrl[2], 'Renbu Shima', avatarUrl[0]),   
