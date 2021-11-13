@@ -136,7 +136,6 @@ class FriendsRq extends StatelessWidget {
       home: Scaffold(
       body: Container(
        padding: EdgeInsets.all(10),
-       // height: 140.00,
         color: Colors.grey.shade200,
         child: ListView(
           children: <Widget> [

@@ -263,11 +263,9 @@ class NewsPage extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              //First of all we need to creat the post editor
               Container(
                 width: double.infinity,
                 decoration: BoxDecoration(
-                  //color: mainBlack,
                   borderRadius: BorderRadius.circular(12.0),
                 ),
                 child: Padding(
@@ -324,10 +322,6 @@ class NewsPage extends StatelessWidget {
                   ),
                 ),
               ),
-              //We have finished the Post editor now let's create
-              //the story's timeline
-              // let's first create a new file for the custom widget
-              //now let's buil the container
               SizedBox(
                 height: 10.0,
               ),
@@ -346,9 +340,6 @@ class NewsPage extends StatelessWidget {
               SizedBox(
                 height: 20.0,
               ),
-              //Now let's create the news feed
-              //first we will make the custom container of the feed
-              //Ok let's test our widget
               feedBox(avatarUrl[0], "Chủ tịch Aruto", "6 phút ",
                   "Hey! Aruto ja naitooo",storyUrl[0] ),
               feedBox(avatarUrl[1], "Hổ Bi cuồng Ark", "7 phút ",
