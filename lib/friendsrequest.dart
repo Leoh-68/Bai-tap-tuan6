@@ -129,7 +129,6 @@ class FriendsRq extends StatelessWidget {
     "https://pbs.twimg.com/profile_images/1300137889267937280/4zf4z8dg_400x400.jpg",
     "https://static.wikia.nocookie.net/kamenrider/images/8/8c/Horobi_Rebuilt.png",
     "https://static.wikia.nocookie.net/ultramananthology/images/5/51/Trigger_Multi_Type.png",
-    "https://images.unsplash.com/photo-1525879000488-bff3b1c387cf?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
   ];
 
     return MaterialApp(
@@ -173,10 +172,7 @@ class FriendsRq extends StatelessWidget {
                   ),
 
                 )
-                
-
-              ],
-              
+              ],   
             ),
             Padding(padding: EdgeInsets.only(top: 13)),
             const Divider(
@@ -193,7 +189,6 @@ class FriendsRq extends StatelessWidget {
                       onPressed: () {},
                       child: Row(
                         children: [
-                         
                           Padding(
                             padding: EdgeInsets.only(right: 230),
                             child: Text(
@@ -206,8 +201,7 @@ class FriendsRq extends StatelessWidget {
                   TextButton(
                       onPressed: () {},
                       child: Row(
-                        children: [
-                         
+                        children: [                        
                           Padding(
                             padding: EdgeInsets.only(left: 5),
                             child: Text(
@@ -216,7 +210,8 @@ class FriendsRq extends StatelessWidget {
                             ),
                           ),
                         ],
-                      )),
+                      )
+                    ),
                 ],
               ),
             ),

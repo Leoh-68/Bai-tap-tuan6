@@ -307,7 +307,6 @@ class NewsPage extends StatelessWidget {
                         color: Colors.grey,
                         thickness: 1.5,
                       ),
-                      //Now we will create a Row of three button
                       Row(
                         children: [
                           actionButton(
@@ -333,7 +332,7 @@ class NewsPage extends StatelessWidget {
                   children: [
                     storyTile(avatarUrl[4], storyUrl[0], "Tạo tin"),
                     storyTile(avatarUrl[1], storyUrl[1], "Hổ Bi cuồng Ark"),
-                    storyTile(avatarUrl[2], storyUrl[3], "Giorno giovana"),
+                    storyTile(avatarUrl[2], storyUrl[3], "Renbu Shima"),
                   ],
                 ),
               ),
