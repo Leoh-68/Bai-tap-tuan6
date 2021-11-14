@@ -1,6 +1,8 @@
 
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:meta/meta.dart';
+import 'package:readmore/readmore.dart';
 
  
 
@@ -11,7 +13,8 @@ class NewsPage extends StatelessWidget {
     String contentText, String contentImg) {
     final number= Random().nextInt(100);
     final number2= Random().nextInt(1000);
-    final number3= Random().nextInt(1000);   
+    final number3= Random().nextInt(1000);
+    int countN=0;   
   return Container(
     margin: EdgeInsets.only(bottom: 20.0),
     width: double.infinity,
@@ -77,10 +80,11 @@ class NewsPage extends StatelessWidget {
             height: 10.0,
           ),
           if (contentText != "")
-            Text(
-              contentText,
-              style: TextStyle(color: Colors.white, fontSize: 16.0),
-            ),
+            
+              _content(contentText),
+              //style: TextStyle(color: Colors.white, fontSize: 16.0),
+              
+          
           SizedBox(
             height: 10.0,
           ),
@@ -181,7 +185,32 @@ class NewsPage extends StatelessWidget {
     ),
   );
 }
-  
+  Widget _content(String contentText)
+  {
+    return Container(
+      child: ReadMoreText(
+        contentText,
+        trimLines: 3,
+        textAlign: TextAlign.justify,
+        trimMode: TrimMode.Line,
+        trimCollapsedText: " Xem thêm ",
+        trimExpandedText: " Thu gọn ",
+        lessStyle: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.grey[600],
+        ),
+        moreStyle: TextStyle(
+          fontWeight: FontWeight.bold,
+          color: Colors.grey[600],
+        ),
+        style: TextStyle(
+          fontSize: 16,
+          height: 2,
+          color: Colors.white, 
+        ),
+      ),
+    );
+  }
 
   Widget storyTile(String avatarUrl, String storyUrl, String userName) {
   return Container(
@@ -341,10 +370,11 @@ class NewsPage extends StatelessWidget {
               ),
               feedBox(avatarUrl[0], "Chủ tịch Aruto", "6 phút ",
                   "Hey! Aruto ja naitooo",storyUrl[0] ),
-              feedBox(avatarUrl[1], "Hổ Bi cuồng Ark", "7 phút ",
+              feedBox(avatarUrl[1], "Hổ Bi cuồng Ark","7 phút ",
                   "Bang nhạc Metsubojinrai chính thức thành lập.", storyUrl[1]),
               feedBox(avatarUrl[2], "Renbu Shima", "một ngày trước ",
-                  "【開催決定!】「TSUBURAYA CONVENTION 2021 SPECIAL PROGRAM」12/13(月)オンライン生配信・無料公開!!", storyUrl[3]),
+                  "The first entry of the Ultraman Series, Ultra Q, featured mankind encountering the giant monsters known as Kaiju. The series was released in 1966 by the special effects studio Tsuburaya Productions, which was founded in 1963 by special effects wizard Eiji Tsuburaya, the man who brought such monsters to life as the King of the Monsters himself, Godzilla"
+                  , storyUrl[3]),
             ],
           ),
         ),
